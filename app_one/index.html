@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="aframe.js"></script>
+		<script src="environment.js"></script>
+		<title>Tutorial 6</title>
+	</head>
+	<body>
+		<a-scene>
+			<a-box
+				color="green"
+				position="2 2 -3"
+				rotation="0 45 0"
+				scale="1 1 1"
+				animation__1="property: rotation; to: 0 360 0; dir: alternate; dur: 2000; loop: true"
+			>
+			</a-box>
+			<a-sphere
+				position="3 2 -5"
+				radius="1.25"
+				color="#EF2D5E"
+				animation__1="property: rotation; to: 240 360 0; dir: alternate; dur: 2000; loop: true"
+			></a-sphere>
+			<a-cylinder
+				position="5 2 -4"
+				radius="0.5"
+				height="1.5"
+				color="#FFC65D"
+				animation__1="property: rotation; to: 180 360 0; dir: alternate; dur: 2000; loop: true"
+			></a-cylinder>
+
+			<!-- environment as entity -->
+			<a-entity environment="preset: tron"></a-entity>
+
+			<!-- player viewport -->
+			<a-camera position="2 3 5">
+				<!-- cursor circle -->
+				<a-cursor color="red"></a-cursor>
+			</a-camera>
+		</a-scene>
+	</body>
+</html>
