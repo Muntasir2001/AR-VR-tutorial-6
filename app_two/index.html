@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="aframe.js"></script>
+		<script src="environment.js"></script>
+		<title>App 2</title>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<a-asset-item
+					id="doraemon"
+					src="models/doraemon.glb"
+				></a-asset-item>
+			</a-assets>
+			<!-- model entity -->
+			<a-gltf-model src="#doraemon" scale="1 1 1"></a-gltf-model>
+
+			<!-- environment as entity -->
+			<a-entity environment="preset: forest"></a-entity>
+
+			<!-- player viewport -->
+			<a-camera position="2 3 5">
+				<!-- cursor circle -->
+				<a-cursor color="red"></a-cursor>
+			</a-camera>
+		</a-scene>
+	</body>
+</html>

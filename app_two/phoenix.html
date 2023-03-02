@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="aframe.js"></script>
+		<script src="environment.js"></script>
+		<script src="aframe-extras.js"></script>
+		<title>Phoenix</title>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<a-asset-item
+					id="phoenix"
+					src="models/phoenix_bird.glb"
+				></a-asset-item>
+			</a-assets>
+			<!-- model entity -->
+			<a-entity position="9 6 4">
+				<a-gltf-model
+					src="#phoenix"
+					scale="0.002 0.002 0.002"
+					animation-mixer="clip: Take 001"
+					animation__2="property: position; from: 4 2 -3; to: 4 2 2; dir: alternate; dur: 3000; loop: true"
+				></a-gltf-model>
+			</a-entity>
+
+			<!-- environment as entity -->
+			<a-entity environment="preset: starry"></a-entity>
+
+			<!-- player viewport -->
+			<a-camera position="2 3 5">
+				<!-- cursor circle -->
+				<a-cursor color="red"></a-cursor>
+			</a-camera>
+		</a-scene>
+	</body>
+</html>

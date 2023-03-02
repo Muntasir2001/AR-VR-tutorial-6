@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<script src="aframe.js"></script>
+		<script src="environment.js"></script>
+		<script src="aframe-extras.js"></script>
+		<title>Liverpool Station</title>
+	</head>
+	<body>
+		<a-scene>
+			<a-assets>
+				<a-asset-item
+					id="liverpool-station"
+					src="models/liverpool_st_stn.glb"
+				></a-asset-item>
+				<a-asset-item
+					id="phoenix"
+					src="models/phoenix_bird.glb"
+				></a-asset-item>
+			</a-assets>
+			<!-- model entity -->
+			<a-entity position="0 0 -3">
+				<a-gltf-model src="#liverpool-station" scale="1 1 1"></a-gltf-model>
+			</a-entity>
+
+			<a-entity position="9 6 4">
+				<a-gltf-model
+					src="#phoenix"
+					scale="0.002 0.002 0.002"
+					animation-mixer="clip: Take 001"
+					animation__2="property: position; from: 4 2 -3; to: 8 2 -3; dir: alternate; dur: 3000; loop: true"
+				></a-gltf-model>
+			</a-entity>
+
+			<!-- environment as entity -->
+			<a-entity environment="preset: starry"></a-entity>
+
+			<!-- player viewport -->
+			<a-camera position="2 3 5">
+				<!-- cursor circle -->
+				<a-cursor color="red"></a-cursor>
+			</a-camera>
+		</a-scene>
+	</body>
+</html>
